@@ -5,7 +5,7 @@
 
 - [Admin DB](AdminDb) is a simple Postgres DB. It uses it's own docker image to aid schema and initial data setup.
 - [Admin API](AdminApi) is a simple ASP.NET Core CRUD API. It uses EF Core to work with Admin DB.
-- Once an entity is added/modified/deleted, Admin API raises an event in rabbit queue with entity state and data snapshot. Rabbit instance from `docker-compose` uses management instance and UI is available on port `15672`.
+- Once an entity is added/modified/deleted, Admin API raises an event in rabbit queue with entity state and data snapshot. Rabbit container from `docker-compose` uses management image and UI is available on port `15672` (`guest`/`guest`).
 - [Event API](EventApi) is another simple ASP.NET Core API that lets you consume events from above-mentioned queue.
 
 ## See In Action
