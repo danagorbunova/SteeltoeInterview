@@ -32,7 +32,7 @@ docker-compose -f "docker-compose.yml" down
 - All .NET components are .NET 6.
 - I used VSCode, hence there's no SLN.
 - Swagger UI is available in all builds unless turned off in `AppSettings`.
-- Stelltoe's info and healthchecks are included and are available in swagger (they were not discovered automatically, I added redirects to actuator URLs to have them visible).
+- Steeltoe's info and healthchecks are included and are available in swagger (they were not discovered automatically, I added redirects to actuator URLs to have them visible).
 - There's a conflict between `Npgsql.EntityFrameworkCore.PostgreSQL` and `Steeltoe.Management.EndpointCore` in Admin API, they require different versions of `Microsoft.Extensions.Logging`. I wanted to use .NET 6 with Steeltoe, so `Microsoft.Extensions.Logging` reference is explicit.
 - If you don't have docker (or don't want to use it), rabbit and postgres connection strings are available in `AppSettings`.
 - I had to flip `EnableUnsafeBinaryFormatterSerialization` to `true` in Admin API to get Steeltoe's rabbit serializer to work.
